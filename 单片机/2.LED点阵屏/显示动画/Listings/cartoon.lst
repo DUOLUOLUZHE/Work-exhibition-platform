@@ -1,0 +1,200 @@
+C51 COMPILER V9.54   CARTOON                                                               01/30/2024 16:41:12 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE CARTOON
+OBJECT MODULE PLACED IN .\Objects\cartoon.obj
+COMPILER INVOKED BY: D:\51\KELLC51\C51\BIN\C51.EXE cartoon.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\cartoon.lst) TABS(2) OBJECT(.\Objects\cartoon.obj)
+
+line level    source
+
+   1          #include "head.h"
+   2          
+   3          
+   4          int off = 100;
+   5          
+   6          void cartoon(){
+   7   1          Timer0Init();
+   8   1          while(off){
+   9   2            button(7,0x3C);
+  10   2            off--;
+  11   2          }
+  12   1          off = 100;
+  13   1          time(100);
+  14   1          P0 = 0xFF;
+  15   1          while(off){
+  16   2            button(6,0x3C);
+  17   2            button(7,0x42);
+  18   2            off--;
+  19   2          }
+  20   1          off = 100;
+  21   1          P0 = 0xFF;
+  22   1          while(off){
+  23   2            button(5,0x3C);
+  24   2            button(6,0x42);
+  25   2            button(7,0xA9);
+  26   2            off--;
+  27   2          }
+  28   1          off = 100;
+  29   1          P0 = 0xFF;
+  30   1          while(off){
+  31   2            button(4,0x3C);
+  32   2            button(5,0x42);
+  33   2            button(6,0xA9);
+  34   2            button(7,0x85);
+  35   2            off--;
+  36   2          }
+  37   1          off = 100;
+  38   1          P0 = 0xFF;
+  39   1          while(off){
+  40   2            button(3,0x3C);
+  41   2            button(4,0x42);
+  42   2            button(5,0xA9);
+  43   2            button(6,0x85);
+  44   2            button(7,0x85);
+  45   2            off--;
+  46   2          }
+  47   1          off = 100;
+  48   1          P0 = 0xFF;
+  49   1          while(off){
+  50   2            button(2,0x3C);
+  51   2            button(3,0x42);
+  52   2            button(4,0xA9);
+  53   2            button(5,0x85);
+  54   2            button(6,0x85);
+C51 COMPILER V9.54   CARTOON                                                               01/30/2024 16:41:12 PAGE 2   
+
+  55   2            button(7,0xA9);
+  56   2            off--;
+  57   2          }
+  58   1          off = 100;
+  59   1          P0 = 0xFF;
+  60   1          while(off){
+  61   2            button(1,0x3C);
+  62   2            button(2,0x42);
+  63   2            button(3,0xA9);
+  64   2            button(4,0x85);
+  65   2            button(5,0x85);
+  66   2            button(6,0xA9);
+  67   2            button(7,0x42);
+  68   2            off--;
+  69   2          }
+  70   1          off = 100;
+  71   1          P0 = 0xFF;
+  72   1          while(off){
+  73   2            button(0,0x3C);
+  74   2            button(1,0x42);
+  75   2            button(2,0xA9);
+  76   2            button(3,0x85);
+  77   2            button(4,0x85);
+  78   2            button(5,0xA9);
+  79   2            button(6,0x42);
+  80   2            button(7,0x3C);
+  81   2            off--;
+  82   2          }
+  83   1          off = 100;
+  84   1          P0 = 0xFF;
+  85   1          while(off){
+  86   2            button(0,0x42);
+  87   2            button(1,0xA9);
+  88   2            button(2,0x85);
+  89   2            button(3,0x85);
+  90   2            button(4,0xA9);
+  91   2            button(5,0x42);
+  92   2            button(6,0x3C);
+  93   2            off--;
+  94   2          }
+  95   1          off = 100;
+  96   1          P0 = 0xFF;
+  97   1          while(off){
+  98   2            button(0,0xA9);
+  99   2            button(1,0x85);
+ 100   2            button(2,0x85);
+ 101   2            button(3,0xA9);
+ 102   2            button(4,0x42);
+ 103   2            button(5,0x3C);
+ 104   2            off--;
+ 105   2          }
+ 106   1          off = 100;
+ 107   1          P0 = 0xFF;
+ 108   1          while(off){
+ 109   2            button(0,0x85);
+ 110   2            button(1,0x85);
+ 111   2            button(2,0xA9);
+ 112   2            button(3,0x42);
+ 113   2            button(4,0x3C);
+ 114   2            off--;
+ 115   2          }
+ 116   1          off = 100;
+C51 COMPILER V9.54   CARTOON                                                               01/30/2024 16:41:12 PAGE 3   
+
+ 117   1          P0 = 0xFF;
+ 118   1          while(off){
+ 119   2            button(0,0x85);
+ 120   2            button(1,0xA9);
+ 121   2            button(2,0x42);
+ 122   2            button(3,0x3C);
+ 123   2            off--;
+ 124   2          }
+ 125   1          off = 100;
+ 126   1          P0 = 0xFF;
+ 127   1          while(off){
+ 128   2            button(0,0xA9);
+ 129   2            button(1,0x42);
+ 130   2            button(2,0x3C);
+ 131   2            off--;
+ 132   2          }
+ 133   1          off = 100;
+ 134   1          P0 = 0xFF;
+ 135   1          while(off){
+ 136   2            button(0,0x42);
+ 137   2            button(1,0x3C);
+ 138   2            off--;
+ 139   2          }
+ 140   1          off = 100;
+ 141   1          P0 = 0xFF;
+ 142   1          while(off){
+ 143   2            button(0,0x3C);
+ 144   2            off--;
+ 145   2          }
+ 146   1          off = 100;
+ 147   1          P0 = 0xFF;
+ 148   1          while(off){
+ 149   2            time(100);
+ 150   2            off--;
+ 151   2          }
+ 152   1          P0 = 0xFF;
+ 153   1      }
+ 154          
+ 155          void clock() interrupt 1
+ 156          {
+ 157   1        static int clo = 0;
+ 158   1        TL0 = 0x30;   
+ 159   1        TH0 = 0xF8;
+ 160   1        P2_1 = 0;
+ 161   1        clo++;
+ 162   1        if(clo>=500){
+ 163   2          clo =0;
+ 164   2          off = 0;
+ 165   2          time(100);
+ 166   2          off = 1;
+ 167   2        }
+ 168   1      
+ 169   1      
+ 170   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1068    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+C51 COMPILER V9.54   CARTOON                                                               01/30/2024 16:41:12 PAGE 4   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,151 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/30/2024  15:29:52  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\51\KELLC51\C51\BIN\BL51.EXE .\Objects\mian.obj, .\Objects\74HC595.obj, .\Objects\time.obj, .\Objects\button.obj TO .\
+>> Objects\e PRINT (.\Listings\e.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\mian.obj (MIAN)
+  .\Objects\74HC595.obj (74HC595)
+  .\Objects\time.obj (TIME)
+  .\Objects\button.obj (BUTTON)
+  D:\51\KELLC51\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\e (MIAN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         _DATA_GROUP_
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     004EH     UNIT         ?PR?MAIN?MIAN
+            CODE    0051H     002DH     UNIT         ?PR?__74HC595_WRITEBYTE?MIAN
+            CODE    007EH     0022H     UNIT         ?PR?_BUTTON?BUTTON
+            CODE    00A0H     0013H     UNIT         ?PR?_TIME?TIME
+            CODE    00B3H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\e (MIAN)
+
+
+SEGMENT                                DATA_GROUP 
+  +--> CALLED SEGMENT                START    LENGTH
+----------------------------------------------------
+?C_C51STARTUP                        -----    -----
+  +--> ?PR?MAIN?MIAN
+
+?PR?MAIN?MIAN                        -----    -----
+  +--> ?PR?_BUTTON?BUTTON
+
+?PR?_BUTTON?BUTTON                   0008H    0001H
+  +--> ?PR?__74HC595_WRITEBYTE?MIAN
+  +--> ?PR?_TIME?TIME
+
+?PR?_TIME?TIME                       0009H    0001H
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\e (MIAN)
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/30/2024  15:29:52  PAGE 2
+
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MIAN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0051H         PUBLIC        __74HC595_WriteByte
+  D:00B0H         PUBLIC        P3
+  C:0003H         PUBLIC        main
+  B:00B0H.5       PUBLIC        RCK
+  B:00B0H.6       PUBLIC        SCK
+  B:00B0H.4       PUBLIC        SER
+  -------         PROC          __74HC595_WRITEBYTE
+  D:0005H         SYMBOL        Byte
+  -------         DO            
+  D:0003H         SYMBOL        i
+  -------         ENDDO         
+  C:0051H         LINE#         7
+  C:0053H         LINE#         9
+  C:0055H         LINE#         10
+  C:0071H         LINE#         11
+  C:0073H         LINE#         12
+  C:0075H         LINE#         13
+  C:0079H         LINE#         14
+  C:007BH         LINE#         15
+  C:007DH         LINE#         16
+  -------         ENDPROC       __74HC595_WRITEBYTE
+  -------         PROC          MAIN
+  C:0003H         LINE#         18
+  C:0003H         LINE#         19
+  C:0005H         LINE#         20
+  C:0007H         LINE#         22
+  C:0007H         LINE#         23
+  C:0010H         LINE#         24
+  C:0019H         LINE#         25
+  C:0022H         LINE#         26
+  C:002BH         LINE#         27
+  C:0034H         LINE#         28
+  C:003DH         LINE#         29
+  C:0046H         LINE#         30
+  C:004FH         LINE#         31
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MIAN
+
+  -------         MODULE        74HC595
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  -------         ENDMOD        74HC595
+
+  -------         MODULE        TIME
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:00A0H         PUBLIC        _time
+  -------         PROC          _TIME
+  D:0006H         SYMBOL        number
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0009H         SYMBOL        j
+  -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/30/2024  15:29:52  PAGE 3
+
+
+  C:00A0H         LINE#         2
+  C:00A0H         LINE#         3
+  C:00A0H         LINE#         5
+  C:00AAH         LINE#         6
+  C:00ACH         LINE#         7
+  C:00B2H         LINE#         9
+  -------         ENDPROC       _TIME
+  -------         ENDMOD        TIME
+
+  -------         MODULE        BUTTON
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  C:007EH         PUBLIC        _button
+  -------         PROC          _BUTTON
+  D:0008H         SYMBOL        column
+  D:0004H         SYMBOL        line
+  C:007EH         LINE#         3
+  C:0080H         LINE#         4
+  C:0085H         LINE#         5
+  C:0095H         LINE#         6
+  C:009CH         LINE#         7
+  C:009FH         LINE#         8
+  -------         ENDPROC       _BUTTON
+  -------         ENDMOD        BUTTON
+
+Program Size: data=11.0 xdata=0 code=191
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
