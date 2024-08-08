@@ -1,0 +1,19 @@
+﻿  member.c
+D:\Exploit\C\new_work\通讯录\member.c(31,18): warning C4047: “函数”:“number_list *”与“number_list **”的间接级别不同
+D:\Exploit\C\new_work\通讯录\member.c(31,9): warning C4024: “Add”: 形参和实参 1 的类型不同
+D:\Exploit\C\new_work\通讯录\member.c(35,21): warning C4047: “函数”:“number_list *”与“number_list **”的间接级别不同
+D:\Exploit\C\new_work\通讯录\member.c(35,12): warning C4024: “Delete”: 形参和实参 1 的类型不同
+D:\Exploit\C\new_work\通讯录\member.c(39,21): warning C4047: “函数”:“number_list *”与“number_list **”的间接级别不同
+D:\Exploit\C\new_work\通讯录\member.c(39,12): warning C4024: “Select”: 形参和实参 1 的类型不同
+D:\Exploit\C\new_work\通讯录\member.c(43,20): warning C4047: “函数”:“number_list *”与“number_list **”的间接级别不同
+D:\Exploit\C\new_work\通讯录\member.c(43,11): warning C4024: “Amend”: 形参和实参 1 的类型不同
+D:\Exploit\C\new_work\通讯录\member.c(47,19): warning C4047: “函数”:“number_list *”与“number_list **”的间接级别不同
+D:\Exploit\C\new_work\通讯录\member.c(47,10): warning C4024: “Show”: 形参和实参 1 的类型不同
+D:\Exploit\C\new_work\通讯录\member.c(102,18): warning C4047: “函数”:“number_list *”与“number_list **”的间接级别不同
+D:\Exploit\C\new_work\通讯录\member.c(102,9): warning C4024: “Sort”: 形参和实参 1 的类型不同
+D:\Exploit\C\new_work\通讯录\member.c(102,23): warning C4047: “函数”:“int”与“int *”的间接级别不同
+D:\Exploit\C\new_work\通讯录\member.c(102,19): warning C4024: “Sort”: 形参和实参 2 的类型不同
+D:\Exploit\C\new_work\通讯录\member.c(140): warning C4715: “Select”: 不是所有的控件路径都返回值
+D:\Exploit\C\new_work\通讯录\member.c(110): warning C4715: “Delete”: 不是所有的控件路径都返回值
+D:\Exploit\C\new_work\通讯录\member.c(173): warning C4715: “Amend”: 不是所有的控件路径都返回值
+  通讯录.vcxproj -> D:\Exploit\C\new_work\通讯录\Debug\通讯录.exe
