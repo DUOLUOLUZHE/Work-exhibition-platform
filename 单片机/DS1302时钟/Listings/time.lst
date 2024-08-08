@@ -1,0 +1,39 @@
+C51 COMPILER V9.54   TIME                                                                  07/15/2024 10:00:40 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE TIME
+OBJECT MODULE PLACED IN .\Objects\time.obj
+COMPILER INVOKED BY: D:\51\KELLC51\C51\BIN\C51.EXE time.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\t
+                    -ime.lst) TABS(2) OBJECT(.\Objects\time.obj)
+
+line level    source
+
+   1          #include "DS1302.h"
+   2          void time(int number)   //@11.0592MHz  1∫¡√Î
+   3          {
+   4   1        
+   5   1        while(number--){
+   6   2            unsigned char i, j;
+   7   2      
+   8   2            i = 11;
+   9   2            j = 190;
+  10   2            do
+  11   2            {
+  12   3              while (--j);
+  13   3            } while (--i);
+  14   2        }
+  15   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     25    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
