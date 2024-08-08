@@ -1,0 +1,70 @@
+C51 COMPILER V9.54   BUTTON                                                                07/16/2024 22:32:22 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE BUTTON
+OBJECT MODULE PLACED IN .\Objects\button.obj
+COMPILER INVOKED BY: D:\51\KELLC51\C51\BIN\C51.EXE button.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\button.lst) TABS(2) OBJECT(.\Objects\button.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "button.h"
+   3          #include "time.h"
+   4          
+   5          
+   6          
+   7          int lift_button(int number){
+   8   1          
+   9   1          if(P3_1==0){
+  10   2              time(1);
+  11   2              while(P3_1==0);
+  12   2              time(1);
+  13   2              number = 1;
+  14   2              return number;
+  15   2          }
+  16   1          if(P3_0==0){
+  17   2              time(1);
+  18   2              while(P3_0==0);
+  19   2              time(1);
+  20   2              number = 3;
+  21   2              return number;
+  22   2          }
+  23   1          if(P3_2==0){
+  24   2              time(1);
+  25   2              while(P3_2==0);
+  26   2              time(1);
+  27   2              number = 5;
+  28   2              return number;
+  29   2          }
+  30   1          if(P3_3==0){
+  31   2              time(1);
+  32   2              while(P3_3==0);
+  33   2              time(1);
+  34   2              number = 7;
+  35   2              return number;
+  36   2          }
+  37   1          return number;
+  38   1      
+  39   1      
+  40   1      
+  41   1      
+  42   1      }
+  43          
+  44          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    121    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+C51 COMPILER V9.54   BUTTON                                                                07/16/2024 22:32:22 PAGE 2   
+
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

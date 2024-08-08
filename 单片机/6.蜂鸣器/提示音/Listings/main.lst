@@ -1,0 +1,99 @@
+C51 COMPILER V9.54   MAIN                                                                  07/16/2024 22:32:22 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\51\KELLC51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\m
+                    -ain.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "time.h"
+   3          #include "button.h"
+   4          #include "Nixie.h"
+   5          #include "voice.h"
+   6          
+   7          
+   8          
+   9          int select_number = 0;
+  10          
+  11          
+  12          void main(){
+  13   1        
+  14   1        while(1){
+  15   2          
+  16   2          select_number = lift_button(select_number);
+  17   2          
+  18   2          switch(select_number){
+  19   3            case 1:
+  20   3              once_voice();
+  21   3              select_number++;
+  22   3              
+  23   3              Nixie(8,1);
+  24   3              
+  25   3              break;
+  26   3            case 2:
+  27   3              
+  28   3              Nixie(8,1);
+  29   3              
+  30   3              break;
+  31   3            case 3:
+  32   3              once_voice();
+  33   3              select_number++;
+  34   3      
+  35   3              
+  36   3              Nixie(7,2);
+  37   3              
+  38   3              break;
+  39   3            case 4:
+  40   3              
+  41   3              Nixie(7,2);
+  42   3              
+  43   3              break;
+  44   3            case 5:
+  45   3              once_voice();
+  46   3              select_number++;
+  47   3              
+  48   3              Nixie(6,3);
+  49   3              
+  50   3              break;
+  51   3            case 6:
+  52   3              
+  53   3              Nixie(6,3);
+  54   3              
+C51 COMPILER V9.54   MAIN                                                                  07/16/2024 22:32:22 PAGE 2   
+
+  55   3              break;
+  56   3            case 7:
+  57   3              once_voice();
+  58   3              select_number++;
+  59   3              
+  60   3              Nixie(5,4);
+  61   3              
+  62   3              break;
+  63   3            case 8:
+  64   3              
+  65   3              Nixie(5,4);
+  66   3              
+  67   3              break;
+  68   3          }
+  69   2          
+  70   2        }
+  71   1      
+  72   1      
+  73   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    175    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

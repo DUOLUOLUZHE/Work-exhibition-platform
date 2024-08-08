@@ -1,0 +1,8 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj",
+".\Objects\button.obj",
+".\Objects\time.obj",
+".\Objects\Timer0.obj",
+".\Objects\music_table.obj" 
+TO ".\Objects\project" 
+PRINT(".\Listings\project.m51") RAMSIZE(256) 

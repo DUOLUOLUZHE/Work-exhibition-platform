@@ -1,0 +1,164 @@
+C51 COMPILER V9.54   MUSIC_TABLE                                                           07/20/2024 09:39:26 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MUSIC_TABLE
+OBJECT MODULE PLACED IN .\Objects\music_table.obj
+COMPILER INVOKED BY: D:\51\KELLC51\C51\BIN\C51.EXE music_table.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Lis
+                    -tings\music_table.lst) TABS(2) OBJECT(.\Objects\music_table.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "music_table.h"
+   3          
+   4          //C大调音符对照
+   5          
+   6          //音符与索引对照表,P为休止符，L为低音M为中音，H为高音，下划线代表升半音符
+   7          #define P 0
+   8          #define L1  1
+   9          #define L1_ 2
+  10          #define L2  3
+  11          #define L2_ 4
+  12          #define L3  5
+  13          #define L4  6
+  14          #define L4_ 7
+  15          #define L5  8
+  16          #define L5_ 9
+  17          #define L6  10
+  18          #define L6_ 11
+  19          #define L7  12
+  20          #define M1  13
+  21          #define M1_ 14
+  22          #define M2  15
+  23          #define M2_ 16
+  24          #define M3  17
+  25          #define M4  18
+  26          #define M4_ 19
+  27          #define M5  20
+  28          #define M5_ 21
+  29          #define M6  22
+  30          #define M6_ 23
+  31          #define M7  24
+  32          #define H1  25
+  33          #define H1_ 26
+  34          #define H2  27
+  35          #define H2_ 28
+  36          #define H3  29
+  37          #define H4  30
+  38          #define H4_ 31
+  39          #define H5  32
+  40          #define H5_ 33
+  41          #define H6  34
+  42          #define H6_ 35
+  43          #define H7  36
+  44          
+  45          
+  46          //小星星
+  47          int xiaoxingxing[] = {M1,M1,M5,M5,M6,M6,M5,M5,M4,M4,M3,M3,M2,M2,M1,M5,M5,M4,M4,M3,M3,M2,M2,M5,M5,M4,M4,M3,
+             -M3,M2,M1,M1,M5,M5,M6,M6,M5,M5,M4,M4,M3,M3,M2,M2,M1};
+  48          int xiaoxingxing_len = sizeof(xiaoxingxing) / sizeof(xiaoxingxing[0]);
+  49          
+  50          int music_table(int number){
+  51   1          int tl_th = 0;
+  52   1          
+  53   1          switch(number){
+C51 COMPILER V9.54   MUSIC_TABLE                                                           07/20/2024 09:39:26 PAGE 2   
+
+  54   2              case 0: 
+  55   2              tl_th = 0; break;
+  56   2              case 1: 
+  57   2                tl_th = 63628; break;
+  58   2              case 2: 
+  59   2                tl_th = 63731; break;
+  60   2              case 3: 
+  61   2                tl_th = 63835; break;
+  62   2              case 4: 
+  63   2                tl_th = 63928; break;
+  64   2              case 5: 
+  65   2                tl_th = 64021; break;
+  66   2              case 6: 
+  67   2                tl_th = 64103; break;
+  68   2              case 7: 
+  69   2                tl_th = 64185; break;
+  70   2              case 8: 
+  71   2                tl_th = 64260; break;
+  72   2              case 9: 
+  73   2                tl_th = 64331; break;
+  74   2              case 10: 
+  75   2                tl_th = 64400; break;
+  76   2              case 11: 
+  77   2                tl_th = 64463; break;
+  78   2              case 12: 
+  79   2                tl_th = 64528; break;
+  80   2              case 13: 
+  81   2                tl_th = 64580; break;
+  82   2              case 14: 
+  83   2                tl_th = 64633; break;
+  84   2              case 15: 
+  85   2                tl_th = 64684; break;
+  86   2              case 16: 
+  87   2                tl_th = 64732; break;
+  88   2              case 17: 
+  89   2                tl_th = 64777; break;
+  90   2              case 18: 
+  91   2                tl_th = 64820; break;
+  92   2              case 19: 
+  93   2                tl_th = 64860; break;
+  94   2              case 20: 
+  95   2                tl_th = 64898; break;
+  96   2              case 21: 
+  97   2                tl_th = 64934; break;
+  98   2              case 22: 
+  99   2                tl_th = 64968; break;
+ 100   2              case 23: 
+ 101   2                tl_th = 65000; break;
+ 102   2              case 24: 
+ 103   2                tl_th = 65030; break;
+ 104   2              case 25: 
+ 105   2                tl_th = 65058; break;
+ 106   2              case 26: 
+ 107   2                tl_th = 65085; break;
+ 108   2              case 27: 
+ 109   2                tl_th = 65110; break;
+ 110   2              case 28: 
+ 111   2                tl_th = 65134; break;
+ 112   2              case 29: 
+ 113   2                tl_th = 65157; break;
+ 114   2              case 30: 
+ 115   2                tl_th = 65178; break;
+C51 COMPILER V9.54   MUSIC_TABLE                                                           07/20/2024 09:39:26 PAGE 3   
+
+ 116   2              case 31: 
+ 117   2                tl_th = 65198; break;
+ 118   2              case 32: 
+ 119   2                tl_th = 65217; break;
+ 120   2              case 33: 
+ 121   2                tl_th = 65235; break;
+ 122   2              case 34: 
+ 123   2                tl_th = 65252; break;
+ 124   2              case 35: 
+ 125   2                tl_th = 65268; break;
+ 126   2              case 36: 
+ 127   2                tl_th = 65283; break;
+ 128   2          
+ 129   2          }
+ 130   1          return tl_th;
+ 131   1      
+ 132   1      }
+ 133          
+ 134          
+ 135          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    456    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     92       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
