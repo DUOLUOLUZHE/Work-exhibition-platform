@@ -1,0 +1,139 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/28/2024  12:02:43  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\51\KELLC51\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\time.obj, .\Objects\send_and_income.obj TO .\Objects\1 PRIN
+>> T (.\Listings\1.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\time.obj (TIME)
+  .\Objects\send_and_income.obj (SEND_AND_INCOME)
+  D:\51\KELLC51\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\1 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0017H     UNIT         ?PR?INIT?SEND_AND_INCOME
+            CODE    001AH     0015H     UNIT         ?PR?_SLEEP?TIME
+            CODE    002FH     0011H     UNIT         ?PR?MAIN?MAIN
+            CODE    0040H     000CH     UNIT         ?C_C51STARTUP
+            CODE    004CH     0008H     UNIT         ?PR?_SEND?SEND_AND_INCOME
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\1 (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?INIT?SEND_AND_INCOME
+  +--> ?PR?_SEND?SEND_AND_INCOME
+  +--> ?PR?_SLEEP?TIME
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\1 (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/28/2024  12:02:43  PAGE 2
+
+
+  C:002FH         PUBLIC        main
+  -------         PROC          MAIN
+  C:002FH         LINE#         3
+  C:002FH         LINE#         4
+  C:0032H         LINE#         5
+  C:0032H         LINE#         6
+  C:0037H         LINE#         7
+  C:003EH         LINE#         8
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        TIME
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:001AH         PUBLIC        _sleep
+  -------         PROC          _SLEEP
+  D:0006H         SYMBOL        number
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:001AH         LINE#         3
+  C:001AH         LINE#         4
+  C:001AH         LINE#         6
+  C:0024H         LINE#         7
+  C:0026H         LINE#         8
+  C:0028H         LINE#         10
+  C:0028H         LINE#         11
+  C:002AH         LINE#         12
+  C:002CH         LINE#         13
+  C:002EH         LINE#         14
+  -------         ENDPROC       _SLEEP
+  -------         ENDMOD        TIME
+
+  -------         MODULE        SEND_AND_INCOME
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00B0H.5       PUBLIC        T1
+  C:0003H         PUBLIC        Init
+  B:0098H.1       PUBLIC        TI
+  C:004CH         PUBLIC        _send
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  B:00A8H.3       PUBLIC        ET1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          INIT
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:0003H         LINE#         4
+  C:0006H         LINE#         5
+  C:0009H         LINE#         7
+  C:000CH         LINE#         8
+  C:000FH         LINE#         9
+  C:0012H         LINE#         10
+  C:0015H         LINE#         11
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/28/2024  12:02:43  PAGE 3
+
+
+  C:0017H         LINE#         12
+  C:0019H         LINE#         13
+  -------         ENDPROC       INIT
+  -------         PROC          _SEND
+  D:0007H         SYMBOL        Byte
+  C:004CH         LINE#         15
+  C:004CH         LINE#         16
+  C:004EH         LINE#         17
+  C:0051H         LINE#         18
+  C:0053H         LINE#         19
+  -------         ENDPROC       _SEND
+  -------         ENDMOD        SEND_AND_INCOME
+
+Program Size: data=9.0 xdata=0 code=84
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

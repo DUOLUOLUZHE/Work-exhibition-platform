@@ -1,0 +1,38 @@
+C51 COMPILER V9.54   TIME                                                                  01/28/2024 12:38:01 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE TIME
+OBJECT MODULE PLACED IN .\Objects\time.obj
+COMPILER INVOKED BY: D:\51\KELLC51\C51\BIN\C51.EXE time.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\t
+                    -ime.lst) TABS(2) OBJECT(.\Objects\time.obj)
+
+line level    source
+
+   1          #include "head.h"
+   2          
+   3          void sleep(number)    //@24.000MHz
+   4          {
+   5   1        unsigned char i, j;
+   6   1        while(number--){
+   7   2          i = 24;
+   8   2          j = 85;
+   9   2          do
+  10   2          {
+  11   3            while (--j);
+  12   3          } while (--i);
+  13   2        }
+  14   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     21    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

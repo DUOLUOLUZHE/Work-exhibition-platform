@@ -1,0 +1,336 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/28/2024  12:38:01  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\51\KELLC51\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\send_and_income.obj, .\Objects\time.obj, .\Objects\light.ob
+>> j TO .\Objects\e PRINT (.\Listings\e.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\send_and_income.obj (SEND_AND_INCOME)
+  .\Objects\time.obj (TIME)
+  .\Objects\light.obj (LIGHT)
+  D:\51\KELLC51\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\e (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     001BH     UNIT         ?PR?INIT?SEND_AND_INCOME
+                    001EH     0005H                  *** GAP ***
+            CODE    0023H     0003H     ABSOLUTE     
+            CODE    0026H     009BH     UNIT         ?PR?FORMAT1?LIGHT
+            CODE    00C1H     005EH     UNIT         ?PR?LED?MAIN
+            CODE    011FH     005BH     UNIT         ?PR?FORMAT2?LIGHT
+            CODE    017AH     002FH     UNIT         ?PR?FORMAT3?LIGHT
+            CODE    01A9H     0015H     UNIT         ?PR?_SLEEP?TIME
+            CODE    01BEH     0013H     UNIT         ?PR?FORMAT4?LIGHT
+            CODE    01D1H     000CH     UNIT         ?C_C51STARTUP
+            CODE    01DDH     0008H     UNIT         ?PR?MAIN?MAIN
+            CODE    01E5H     0008H     UNIT         ?PR?_SEND?SEND_AND_INCOME
+            CODE    01EDH     0006H     UNIT         ?PR?INCOME?SEND_AND_INCOME
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\e (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?LED?MAIN
+  +--> ?PR?FORMAT1?LIGHT
+  +--> ?PR?FORMAT2?LIGHT
+  +--> ?PR?FORMAT3?LIGHT
+  +--> ?PR?FORMAT4?LIGHT
+
+?PR?FORMAT1?LIGHT
+  +--> ?PR?_SLEEP?TIME
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/28/2024  12:38:01  PAGE 2
+
+
+
+?PR?FORMAT2?LIGHT
+  +--> ?PR?_SLEEP?TIME
+
+?PR?FORMAT3?LIGHT
+  +--> ?PR?_SLEEP?TIME
+
+?PR?FORMAT4?LIGHT
+  +--> ?PR?_SLEEP?TIME
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?INIT?SEND_AND_INCOME
+  +--> ?PR?INCOME?SEND_AND_INCOME
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\e (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:01DDH         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  C:00C1H         PUBLIC        LED
+  -------         PROC          MAIN
+  C:01DDH         LINE#         3
+  C:01DDH         LINE#         4
+  C:01E0H         LINE#         5
+  C:01E0H         LINE#         6
+  C:01E3H         LINE#         7
+  -------         ENDPROC       MAIN
+  -------         PROC          LED
+  C:00C1H         LINE#         11
+  C:00DEH         LINE#         13
+  C:00F2H         LINE#         14
+  C:00F2H         LINE#         15
+  C:00F5H         LINE#         16
+  C:00F7H         LINE#         17
+  C:00F7H         LINE#         18
+  C:00FAH         LINE#         19
+  C:00FCH         LINE#         20
+  C:00FCH         LINE#         21
+  C:00FFH         LINE#         22
+  C:0101H         LINE#         23
+  C:0101H         LINE#         24
+  C:0104H         LINE#         25
+  C:0104H         LINE#         27
+  C:0104H         LINE#         28
+  -------         ENDPROC       LED
+  -------         ENDMOD        MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/28/2024  12:38:01  PAGE 3
+
+
+
+  -------         MODULE        SEND_AND_INCOME
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:01EDH         PUBLIC        income
+  B:00B0H.5       PUBLIC        T1
+  B:00A8H.7       PUBLIC        EA
+  C:0003H         PUBLIC        Init
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:01E5H         PUBLIC        _send
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  B:00A8H.3       PUBLIC        ET1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          INIT
+  C:0003H         LINE#         2
+  C:0003H         LINE#         3
+  C:0003H         LINE#         4
+  C:0006H         LINE#         5
+  C:0009H         LINE#         6
+  C:000CH         LINE#         7
+  C:000FH         LINE#         8
+  C:0012H         LINE#         9
+  C:0015H         LINE#         10
+  C:0017H         LINE#         11
+  C:0019H         LINE#         12
+  C:001BH         LINE#         13
+  C:001DH         LINE#         14
+  -------         ENDPROC       INIT
+  -------         PROC          _SEND
+  D:0007H         SYMBOL        Byte
+  C:01E5H         LINE#         16
+  C:01E5H         LINE#         17
+  C:01E7H         LINE#         18
+  C:01EAH         LINE#         19
+  C:01ECH         LINE#         20
+  -------         ENDPROC       _SEND
+  -------         PROC          INCOME
+  C:01EDH         LINE#         22
+  C:01EDH         LINE#         23
+  C:01F0H         LINE#         24
+  C:01F2H         LINE#         25
+  -------         ENDPROC       INCOME
+  -------         ENDMOD        SEND_AND_INCOME
+
+  -------         MODULE        TIME
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:01A9H         PUBLIC        _sleep
+  -------         PROC          _SLEEP
+  D:0006H         SYMBOL        number
+  -------         DO            
+  D:0005H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/28/2024  12:38:01  PAGE 4
+
+
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:01A9H         LINE#         3
+  C:01A9H         LINE#         4
+  C:01A9H         LINE#         6
+  C:01B3H         LINE#         7
+  C:01B5H         LINE#         8
+  C:01B7H         LINE#         10
+  C:01B7H         LINE#         11
+  C:01B9H         LINE#         12
+  C:01BBH         LINE#         13
+  C:01BDH         LINE#         14
+  -------         ENDPROC       _SLEEP
+  -------         ENDMOD        TIME
+
+  -------         MODULE        LIGHT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  B:00A0H.0       PUBLIC        P2_0
+  B:00A0H.1       PUBLIC        P2_1
+  B:00A0H.2       PUBLIC        P2_2
+  B:00A0H.3       PUBLIC        P2_3
+  B:00A0H.4       PUBLIC        P2_4
+  B:00A0H.5       PUBLIC        P2_5
+  B:00A0H.6       PUBLIC        P2_6
+  B:00A0H.7       PUBLIC        P2_7
+  C:0026H         PUBLIC        format1
+  C:011FH         PUBLIC        format2
+  C:017AH         PUBLIC        format3
+  C:01BEH         PUBLIC        format4
+  -------         PROC          FORMAT1
+  C:0026H         LINE#         5
+  C:0026H         LINE#         6
+  C:0028H         LINE#         7
+  C:002FH         LINE#         8
+  C:0031H         LINE#         9
+  C:0033H         LINE#         10
+  C:003AH         LINE#         11
+  C:003CH         LINE#         12
+  C:003EH         LINE#         13
+  C:0045H         LINE#         14
+  C:0047H         LINE#         15
+  C:0049H         LINE#         16
+  C:0050H         LINE#         17
+  C:0052H         LINE#         18
+  C:0054H         LINE#         19
+  C:005BH         LINE#         20
+  C:005DH         LINE#         21
+  C:005FH         LINE#         22
+  C:0066H         LINE#         23
+  C:0068H         LINE#         24
+  C:006AH         LINE#         25
+  C:0071H         LINE#         26
+  C:0073H         LINE#         27
+  C:0075H         LINE#         28
+  C:007CH         LINE#         29
+  C:007EH         LINE#         30
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/28/2024  12:38:01  PAGE 5
+
+
+  C:0080H         LINE#         31
+  C:0087H         LINE#         32
+  C:0089H         LINE#         33
+  C:008BH         LINE#         34
+  C:0092H         LINE#         35
+  C:0094H         LINE#         36
+  C:0096H         LINE#         37
+  C:009DH         LINE#         38
+  C:009FH         LINE#         39
+  C:00A1H         LINE#         40
+  C:00A8H         LINE#         41
+  C:00AAH         LINE#         42
+  C:00ACH         LINE#         43
+  C:00B3H         LINE#         44
+  C:00B5H         LINE#         45
+  C:00B7H         LINE#         46
+  C:00BEH         LINE#         47
+  C:00C0H         LINE#         49
+  -------         ENDPROC       FORMAT1
+  -------         PROC          FORMAT2
+  C:011FH         LINE#         52
+  C:011FH         LINE#         53
+  C:0121H         LINE#         54
+  C:0123H         LINE#         55
+  C:012AH         LINE#         56
+  C:012CH         LINE#         57
+  C:012EH         LINE#         58
+  C:0130H         LINE#         59
+  C:0132H         LINE#         60
+  C:0139H         LINE#         61
+  C:013BH         LINE#         62
+  C:013DH         LINE#         63
+  C:013FH         LINE#         64
+  C:0141H         LINE#         65
+  C:0148H         LINE#         66
+  C:014AH         LINE#         67
+  C:014CH         LINE#         68
+  C:014EH         LINE#         69
+  C:0150H         LINE#         70
+  C:0157H         LINE#         71
+  C:0159H         LINE#         72
+  C:015BH         LINE#         74
+  C:015DH         LINE#         75
+  C:015FH         LINE#         76
+  C:0166H         LINE#         77
+  C:0168H         LINE#         78
+  C:016AH         LINE#         79
+  C:016CH         LINE#         80
+  C:016EH         LINE#         81
+  C:0175H         LINE#         82
+  C:0177H         LINE#         83
+  C:0179H         LINE#         86
+  -------         ENDPROC       FORMAT2
+  -------         PROC          FORMAT3
+  C:017AH         LINE#         89
+  C:017AH         LINE#         90
+  C:017CH         LINE#         91
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/28/2024  12:38:01  PAGE 6
+
+
+  C:017EH         LINE#         92
+  C:0180H         LINE#         93
+  C:0182H         LINE#         94
+  C:0189H         LINE#         95
+  C:018BH         LINE#         96
+  C:018DH         LINE#         97
+  C:018FH         LINE#         98
+  C:0191H         LINE#         99
+  C:0193H         LINE#         100
+  C:0195H         LINE#         101
+  C:0197H         LINE#         102
+  C:0199H         LINE#         103
+  C:01A0H         LINE#         104
+  C:01A2H         LINE#         105
+  C:01A4H         LINE#         106
+  C:01A6H         LINE#         107
+  C:01A8H         LINE#         109
+  -------         ENDPROC       FORMAT3
+  -------         PROC          FORMAT4
+  C:01BEH         LINE#         112
+  C:01BEH         LINE#         113
+  C:01C1H         LINE#         114
+  C:01C7H         LINE#         115
+  C:01CAH         LINE#         116
+  -------         ENDPROC       FORMAT4
+  -------         ENDMOD        LIGHT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SEND?SEND_AND_INCOME
+
+Program Size: data=9.0 xdata=0 code=494
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

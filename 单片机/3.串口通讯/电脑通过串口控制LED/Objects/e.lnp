@@ -1,0 +1,6 @@
+".\Objects\main.obj",
+".\Objects\send_and_income.obj",
+".\Objects\time.obj",
+".\Objects\light.obj" 
+TO ".\Objects\e" 
+PRINT(".\Listings\e.m51")
