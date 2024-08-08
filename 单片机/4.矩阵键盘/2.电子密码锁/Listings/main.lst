@@ -1,0 +1,81 @@
+C51 COMPILER V9.54   MAIN                                                                  01/24/2024 13:57:06 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\51\KELLC51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\m
+                    -ain.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          #include "LCD1602.h"
+   3          
+   4          //全局密码
+   5          int Password = 1234;
+   6          
+   7          
+   8          int main(){
+   9   1        int number = 0;
+  10   1        int one_data = 0;
+  11   1        int sum = 0;
+  12   1        LCD_Init();
+  13   1        LCD_ShowString(1,1,"Password");
+  14   1        while(1){
+  15   2          //检测按钮按动
+  16   2          one_data = Button(number);
+  17   2          if(one_data == 12){
+  18   3            sum = 0;
+  19   3            LCD_ShowNum(2,1,sum,4);
+  20   3            one_data = 0;
+  21   3          }
+  22   2          if(one_data == 11){
+  23   3            if(Password == sum){
+  24   4              LCD_ShowString(1,10,"right");
+  25   4            }else{
+  26   4              LCD_ShowString(1,10,"error");
+  27   4            }
+  28   3            one_data = 0;
+  29   3          }
+  30   2          if(one_data){
+  31   3            if(!sum){
+  32   4              sum = one_data;
+  33   4            }else{
+  34   4              if(sum>9999){
+  35   5                one_data = 0;
+  36   5              }else{
+  37   5                sum = sum*10 + one_data;
+  38   5                if(one_data == 10){
+  39   6                  sum = sum -10;
+  40   6                }
+  41   5              }
+  42   4              
+  43   4              
+  44   4            }
+  45   3            
+  46   3          }
+  47   2          if(one_data){
+  48   3            LCD_ShowNum(2,1,sum,4);
+  49   3          }
+  50   2          one_data = 0;
+  51   2          time(3);
+  52   2        }
+  53   1        return 0;
+  54   1      }
+C51 COMPILER V9.54   MAIN                                                                  01/24/2024 13:57:06 PAGE 2   
+
+*** WARNING C294 IN LINE 53 OF main.c: unreachable code
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    230    ----
+   CONSTANT SIZE    =     21    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2       6
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

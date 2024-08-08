@@ -1,0 +1,6 @@
+".\Objects\main.obj",
+".\Objects\LCD1602.obj",
+".\Objects\Button.obj",
+".\Objects\time.obj" 
+TO ".\Objects\d" 
+PRINT(".\Listings\d.m51")

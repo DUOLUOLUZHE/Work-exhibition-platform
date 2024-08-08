@@ -1,0 +1,42 @@
+C51 COMPILER V9.54   MAIN                                                                  01/23/2024 21:58:19 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\51\KELLC51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\m
+                    -ain.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX51.H>
+   2          #include "LCD1602.h"
+   3          
+   4          int main(){
+   5   1        int number = 0;
+   6   1        LCD_Init();
+   7   1        LCD_ShowString(1,1,"number");
+   8   1        while(1){
+   9   2          //¼ì²â°´Å¥°´¶¯
+  10   2          Button(&number);
+  11   2          if(number){
+  12   3            LCD_ShowNum(2,1,number,2);
+  13   3          }
+  14   2          time(3);
+  15   2        }
+  16   1        return 0;
+  17   1      }
+*** WARNING C294 IN LINE 16 OF main.c: unreachable code
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     59    ----
+   CONSTANT SIZE    =      7    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

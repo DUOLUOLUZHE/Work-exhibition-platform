@@ -1,0 +1,5 @@
+".\Objects\main.obj",
+".\Objects\button.obj",
+".\Objects\time.obj" 
+TO ".\Objects\r" 
+PRINT(".\Listings\r.m51")
